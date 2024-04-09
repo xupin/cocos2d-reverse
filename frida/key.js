@@ -2,9 +2,9 @@
 
 Java.perform(function () {
   function intercept() {
-    const libSoName = "libcocos2dlua.so";
+    const libName = "libcocos2dlua.so";
     const funcName = "_Z13xxtea_decryptPhjS_jPj";
-    const ptr = Module.findExportByName(libSoName, funcName);
+    const ptr = Module.findExportByName(libName, funcName);
     if (!ptr) {
       setTimeout(intercept, 500);
       return;
