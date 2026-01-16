@@ -101,9 +101,9 @@ func Encrypt(data []byte, key string) []byte {
 	return toBytes(encrypt(toUint32s(data, true), toUint32s([]byte(key), false)), false)
 }
 
-func Decrypt(data []byte, key string) []byte {
+func Decrypt(data []byte, key []byte) []byte {
 	if len(data) == 0 {
 		return data
 	}
-	return toBytes(decrypt(toUint32s(data, false), toUint32s([]byte(key), false)), true)
+	return toBytes(decrypt(toUint32s(data, false), toUint32s(key, false)), true)
 }
